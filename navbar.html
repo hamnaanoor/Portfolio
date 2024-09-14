@@ -1,0 +1,42 @@
+<nav class="flex justify-between items-center bg-gray-800">
+  <div class="text-2xl font-bold">Hamna Noor</div>
+  <div class="space-x-6">
+    <a href="home.html" class="nav-item">Home</a>
+    <a href="profile.html" class="nav-item">Profile</a>
+    <a href="projects.html" class="nav-item">Projects</a>
+    <a href="goals.html" class="nav-item">Career Goals</a>
+    <a href="skills.html" class="nav-item">Skills & Interests</a>
+    <a href="gallery.html" class="nav-item">Gallery</a>
+    <a href="contact.html" class="nav-item">Contact</a>
+  </div>
+</nav>
+
+<style>
+  /* Navigation bar styling */
+  nav {
+    font-size: 1.2rem;
+    padding: 20px;
+  }
+
+  /* Navigation links */
+  .nav-item {
+    position: relative;
+    display: inline-block;
+    padding: 15px 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+
+  .nav-item:hover {
+    background-color: rgba(255, 116, 192, 0.2);
+    transform: scale(1.1);
+  }
+
+  .nav-item:hover::before {
+    background-color: #c46890;
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+</style>

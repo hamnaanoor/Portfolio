@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skills & Certificates - Hamna Noor</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Navigation bar styling */
+    nav {
+      font-size: 1.2rem;
+      padding: 20px;
+    }
+
+    /* Navigation links */
+    .nav-item {
+      position: relative;
+      display: inline-block;
+      padding: 15px 20px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    .nav-item:hover {
+      background-color: rgba(255, 116, 192, 0.2);
+      transform: scale(1.1);
+    }
+
+    /* Card Styling with Gradient and Hover Effect */
+    .card {
+      background: linear-gradient(to bottom right, #333, #1c1c1c);
+      border: 2px solid #444;
+      border-radius: 12px;
+      padding: 20px;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      min-height: 220px;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* Glow effect on hover */
+    .card::before {
+      content: "";
+      position: absolute;
+      top: -15px;
+      left: -15px;
+      width: calc(100% + 30px);
+      height: calc(100% + 30px);
+      background: rgba(255, 105, 180, 0.3); 
+      border-radius: 12px;
+      opacity: 0;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      transform: scale(1.1);
+      z-index: 0;
+    }
+
+    .card:hover::before {
+      opacity: 1;
+      transform: scale(1.2);
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(255, 105, 180, 0.5);
+    }
+
+    /* Title and Description styling */
+    h3, h4 {
+      color: #e0ffff; 
+    }
+
+    /* Rating bar animation */
+    .skill-bar {
+      height: 100%;
+      background-color: #c46890;
+      border-radius: 9999px;
+      width: 0%;
+      animation: growBar 2s ease forwards;
+    }
+
+    @keyframes growBar {
+      0% { width: 0%; }
+      100% { width: var(--skill-level); }
+    }
+
+    /* Custom checkbox styling */
+    .certificate-list input[type="checkbox"] {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    .certificate-list label {
+      position: relative;
+      display: flex;
+      align-items: center;
+      padding-left: 35px;
+      cursor: pointer;
+      font-size: 1.2rem;
+      color: #e0ffff;
+    }
+
+    .certificate-list label::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 20px;
+      height: 20px;
+      border: 2px solid #c46890;
+      border-radius: 4px;
+      background-color: transparent;
+      transition: background-color 0.3s ease, border-color 0.3s ease;
+    }
+
+    .certificate-list input[type="checkbox"]:checked + label::before {
+      background-color: #c46890;
+      border-color: #c46890;
+    }
+
+    .certificate-list input[type="checkbox"]:checked + label::after {
+      content: "";
+      position: absolute;
+      left: 6px;
+      top: 50%;
+      transform: translateY(-50%) rotate(45deg);
+      width: 6px;
+      height: 12px;
+      border: solid white;
+      border-width: 0 2px 2px 0;
+    }
+
+    body {
+      font-size: 1.125rem;
+    }
+  </style>
+</head>
+<body class="bg-gray-900 text-white font-sans">
+
+  <!-- Navigation Bar -->
+  <nav class="flex justify-between items-center bg-gray-800">
+    <div class="text-2xl font-bold">Hamna Noor</div>
+    <div class="space-x-6">
+      <a href="home.html" class="nav-item">Home</a>
+      <a href="profile.html" class="nav-item">Profile</a>
+      <a href="projects.html" class="nav-item">Projects</a>
+      <a href="goals.html" class="nav-item">Career Goals</a>
+      <a href="skills.html" class="nav-item">Skills & Interests</a>
+      <a href="gallery.html" class="nav-item">Gallery</a>
+      <a href="contact.html" class="nav-item">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Skills & Interests Section -->
+  <section class="p-16">
+    <h2 class="text-5xl font-bold text-center mb-16 text-[#c46890]">Skills & Interests</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+      <!-- Technical Skills Card -->
+      <div class="card">
+        <h3 class="text-3xl font-semibold mb-4">Technical Skills</h3>
+
+        <!-- HTML, CSS, JavaScript Skill Bar -->
+        <div class="mb-6">
+          <h4 class="text-xl">HTML, CSS, JavaScript</h4>
+          <div class="bg-gray-700 w-full h-4 rounded-full mt-2">
+            <div class="skill-bar" style="--skill-level: 90%;"></div>
+          </div>
+        </div>
+
+        <!-- React, Node.js Skill Bar -->
+        <div class="mb-6">
+          <h4 class="text-xl">React, Node.js</h4>
+          <div class="bg-gray-700 w-full h-4 rounded-full mt-2">
+            <div class="skill-bar" style="--skill-level: 85%;"></div>
+          </div>
+        </div>
+
+        <!-- Python, Django Skill Bar -->
+        <div class="mb-6">
+          <h4 class="text-xl">Python, Django</h4>
+          <div class="bg-gray-700 w-full h-4 rounded-full mt-2">
+            <div class="skill-bar" style="--skill-level: 80%;"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Personal Interests Card -->
+      <div class="card">
+        <h3 class="text-3xl font-semibold mb-4">Personal Interests</h3>
+        <ul class="list-disc ml-6 text-lg space-y-4">
+          <li class="flex items-center">Photography</li>
+          <li class="flex items-center">Traveling</li>
+          <li class="flex items-center">Open-Source Contribution</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Certificates Section -->
+    <div class="card mt-10">
+      <h3 class="text-3xl font-semibold mb-6">Certificates</h3>
+      <ul class="certificate-list">
+        <li>
+          <input type="checkbox" checked id="cert1">
+          <label for="cert1">Front-End Web Development</label>
+        </li>
+        <li>
+          <input type="checkbox" checked id="cert2">
+          <label for="cert2">JavaScript Algorithms and Data Structures</label>
+        </li>
+        <li>
+          <input type="checkbox" checked id="cert3">
+          <label for="cert3">Responsive Web Design</label>
+        </li>
+        <li>
+          <input type="checkbox" checked id="cert4">
+          <label for="cert4">Python for Everybody</label>
+        </li>
+        <li>
+          <input type="checkbox" id="cert5">
+          <label for="cert5">Advanced CSS and Sass</label>
+        </li>
+        <li>
+          <input type="checkbox" id="cert6">
+          <label for="cert6">React Native Development</label>
+        </li>
+      </ul>
+    </div>
+
+  </section>
+
+</body>
+</html>
